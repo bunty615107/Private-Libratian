@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Book icon representing Private Librarian -->
+    <!-- Book body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,30 L34,78 Q34,80 36,80 L72,80 Q74,80 74,78 L74,30 Q74,28 72,28 L36,28 Q34,28 34,30 Z"/>
+    <!-- Book spine -->
+    <path
+        android:fillColor="#D0BCFF"
+        android:pathData="M34,28 L34,80 L38,80 L38,28 Z"/>
+    <!-- Page lines -->
+    <path
+        android:fillColor="#9B8EC4"
+        android:pathData="M44,40 L68,40"
+        android:strokeWidth="1.5"
+        android:strokeColor="#9B8EC4"/>
+    <path
+        android:fillColor="#9B8EC4"
+        android:pathData="M44,48 L68,48"
+        android:strokeWidth="1.5"
+        android:strokeColor="#9B8EC4"/>
+    <path
+        android:fillColor="#9B8EC4"
+        android:pathData="M44,56 L60,56"
+        android:strokeWidth="1.5"
+        android:strokeColor="#9B8EC4"/>
+    <!-- Magnifying glass overlay -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M62,60 A8,8 0 1,1 62,59.99"
+        android:strokeWidth="2.5"
+        android:strokeColor="#D0BCFF"/>
+    <path
+        android:pathData="M68,66 L74,72"
+        android:strokeWidth="2.5"
+        android:strokeColor="#D0BCFF"
+        android:strokeLineCap="round"/>
+</vector>

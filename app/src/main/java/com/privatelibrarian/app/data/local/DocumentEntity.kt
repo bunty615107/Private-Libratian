@@ -2,8 +2,6 @@ package com.privatelibrarian.app.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.privatelibrarian.app.domain.model.DocumentType
-import com.privatelibrarian.app.domain.model.IndexingState
 
 @Entity(tableName = "documents")
 data class DocumentEntity(

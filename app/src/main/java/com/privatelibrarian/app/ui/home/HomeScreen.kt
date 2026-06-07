@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.privatelibrarian.app.domain.repository.SearchResult
+// SearchResult will be used when RAG pipeline is fully connected
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

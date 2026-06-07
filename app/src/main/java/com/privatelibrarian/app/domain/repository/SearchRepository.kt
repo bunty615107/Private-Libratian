@@ -1,7 +1,5 @@
 package com.privatelibrarian.app.domain.repository
 
-import com.privatelibrarian.app.data.local.EmbeddingEntity
-import com.privatelibrarian.app.data.local.ObjectBoxManager
 import com.privatelibrarian.app.data.embedding.EmbeddingService
 import com.privatelibrarian.app.data.llm.LlmService
 import com.privatelibrarian.app.data.llm.Gemma4PromptBuilder
@@ -22,21 +20,19 @@ class SearchRepository(
 ) {
     fun askQuestion(query: String): Flow<SearchResult> = flow {
         emit(SearchResult.Loading)
-        
+
         // 1. Generate embedding for query
-        val queryVector = embeddingService.embedText(query) 
+        val queryVector = embeddingService.embedText(query)
             ?: throw Exception("Failed to generate embedding")
-        
-        // 2. Search ObjectBox for context
-        val box = ObjectBoxManager.boxStore.boxFor(EmbeddingEntity::class.java)
-        // val results = box.query(EmbeddingEntity_.vector.nearestNeighbors(queryVector, 5)).build().find()
-        val results = emptyList<EmbeddingEntity>() 
+
+        // 2. Search for context (stubbed — ObjectBox not available)
+        val results = emptyList<String>()
 
         // 3. Extract context text
         val context = if (results.isEmpty()) {
             listOf("No specific context found. Answer using general knowledge.")
         } else {
-            results.map { "Snippet from doc ${it.documentId}" }
+            results
         }
 
         // 4. Build prompt for Gemma 4

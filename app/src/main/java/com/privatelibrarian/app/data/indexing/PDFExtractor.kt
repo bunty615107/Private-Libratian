@@ -1,27 +1,22 @@
 package com.privatelibrarian.app.data.indexing
 
-import android.content.Context
-import com.tom_roush.pdfbox.android.PDFBoxResourceLoader
-import com.tom_roush.pdfbox.pdmodel.PDDocument
-import com.tom_roush.pdfbox.text.PDFTextStripper
+import android.util.Log
 import java.io.File
 
 interface TextExtractor {
     fun extractText(file: File): String
 }
 
-class PDFExtractor(private val context: Context) : TextExtractor {
-    init {
-        PDFBoxResourceLoader.init(context)
-    }
-
+/**
+ * PDF text extractor.
+ * Currently stubbed — will use PdfBox-Android when added as a dependency.
+ */
+class PDFExtractor : TextExtractor {
     override fun extractText(file: File): String {
         return try {
-            val document = PDDocument.load(file)
-            val stripper = PDFTextStripper()
-            val text = stripper.getText(document)
-            document.close()
-            text
+            // TODO: Add com.tom-roush:pdfbox-android dependency and use PDDocument/PDFTextStripper
+            Log.d("PDFExtractor", "Stub: would extract text from ${file.name}")
+            "PDF text extraction requires PdfBox-Android dependency. File: ${file.name}"
         } catch (e: Exception) {
             ""
         }

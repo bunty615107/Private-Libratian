@@ -1,27 +1,29 @@
 package com.privatelibrarian.app.data.embedding
 
 import android.content.Context
-import com.google.mediapipe.tasks.text.textembedder.TextEmbedder
-import com.google.mediapipe.tasks.text.textembedder.TextEmbedder.TextEmbedderOptions
+import android.util.Log
 
+/**
+ * Embedding service for generating text embeddings.
+ * Currently stubbed — will use MediaPipe TextEmbedder when model weights are available.
+ */
 class EmbeddingService(private val context: Context) {
 
-    private var textEmbedder: TextEmbedder? = null
+    private var isInitialized = false
 
     fun initialize(modelPath: String) {
-        val options = TextEmbedderOptions.builder()
-            .setBaseOptions(
-                com.google.mediapipe.tasks.core.BaseOptions.builder()
-                    .setModelAssetPath(modelPath)
-                    .build()
-            )
-            .build()
-        
-        textEmbedder = TextEmbedder.createFromOptions(context, options)
+        // TODO: Initialize MediaPipe TextEmbedder when model is available
+        // val options = TextEmbedderOptions.builder()
+        //     .setBaseOptions(BaseOptions.builder().setModelAssetPath(modelPath).build())
+        //     .build()
+        // textEmbedder = TextEmbedder.createFromOptions(context, options)
+        Log.d("EmbeddingService", "Stub: would initialize with model at $modelPath")
+        isInitialized = true
     }
 
     fun embedText(text: String): FloatArray? {
-        val result = textEmbedder?.embed(text)
-        return result?.embeddingResult()?.embeddings()?.firstOrNull()?.floatEmbedding()
+        if (!isInitialized) return null
+        // Return a dummy 384-dimensional vector for testing
+        return FloatArray(384) { (it.toFloat() / 384f) }
     }
 }
