@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Librarian - On-Device AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">Private Librarian</div>
+            <nav class="nav">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#installation" class="nav-link">Quick Start</a>
+                <a href="https://github.com/bunty615107/Private-Libratian" class="nav-link" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <h1 class="hero-title">Your <span class="text-gradient">Privacy-First</span> On-Device AI Assistant</h1>
+            <p class="hero-tagline">Index your local documents and get natural-language answers using Gemma 4—100% offline.</p>
+            <div class="hero-actions">
+                <a href="#installation" class="btn btn-primary">Get Started</a>
+                <a href="https://github.com/bunty615107/Private-Libratian" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Shield -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>100% Offline</h3>
+                    <p>No documents or embeddings ever leave your device. Your data stays yours.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Search -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <h3>Semantic Search</h3>
+                    <p>Powered by ObjectBox Vector DB for fast, high-dimensional retrieval.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG CPU -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                            <rect x="9" y="9" width="6" height="6"></rect>
+                            <line x1="9" y1="1" x2="9" y2="4"></line>
+                            <line x1="15" y1="1" x2="15" y2="4"></line>
+                            <line x1="9" y1="20" x2="9" y2="23"></line>
+                            <line x1="15" y1="20" x2="15" y2="23"></line>
+                            <line x1="20" y1="9" x2="23" y2="9"></line>
+                            <line x1="20" y1="14" x2="23" y2="14"></line>
+                            <line x1="1" y1="9" x2="4" y2="9"></line>
+                            <line x1="1" y1="14" x2="4" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Local LLM</h3>
+                    <p>Uses Gemma 4 (4-bit quantized) via MediaPipe for intelligence.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <!-- SVG Refresh -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M2.13 15.57a10 10 0 1 0 1.25-10.45l4.8 1.9"></path>
+                        </svg>
+                    </div>
+                    <h3>Automated Indexing</h3>
+                    <p>Background scanning with WorkManager, optimized for battery and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation / Quick Start -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <h2 class="section-title">Quick Start</h2>
+            <div class="code-container">
+                <ol class="installation-steps">
+                    <li>
+                        <strong>Model Weights:</strong> Download Gemma 4 E2B/E4B weights and place them in:
+                        <pre><code>app/src/main/assets/</code></pre>
+                    </li>
+                    <li>
+                        <strong>Build the app:</strong> Run the following command:
+                        <pre><code>./gradlew assembleDebug</code></pre>
+                    </li>
+                    <li>
+                        <strong>Setup:</strong> Install the APK on your device, launch it, and grant file access permissions to allow scanning.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Placeholder -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">See It in Action</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-placeholder">
+                    <span>Home Screen</span>
+                </div>
+                <div class="screenshot-placeholder">
+                    <span>Search Results</span>
+                </div>
+                <div class="screenshot-placeholder">
+                    <span>Chat Interface</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2024 Private Librarian. Released under the Apache 2.0 License.</p>
+            <div class="footer-links">
+                <a href="https://github.com/bunty615107/Private-Libratian" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
