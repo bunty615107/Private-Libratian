@@ -1,0 +1,4 @@
+Initial Release
+- Added on-device vector search.
+- Integrated MediaPipe LLM (Gemma 4).
+- Added document indexing capabilities.
