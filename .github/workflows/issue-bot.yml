@@ -1,0 +1,96 @@
+---
+name: Issue and PR Welcome Bot
+"on":
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome-and-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Process New Issue
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueBody = context.payload.issue.body || '';
+            const repoOwner = context.repo.owner;
+            const issueNumber = context.issue.number;
+
+            let labelToAdd = '';
+            if (issueBody.includes('<!-- template: bug -->')) {
+              labelToAdd = 'bug';
+            } else if (issueBody.includes('<!-- template: enhancement -->')) {
+              labelToAdd = 'enhancement';
+            } else if (issueBody.includes('<!-- template: question -->')) {
+              labelToAdd = 'question';
+            }
+
+            if (labelToAdd) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: [labelToAdd]
+              });
+            }
+
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              assignees: [repoOwner]
+            });
+
+            const userLogin = context.payload.issue.user.login;
+            const welcomeMessage = `Hello @${userLogin} ` +
+              `👋!\n\nThank you for opening this issue and reporting it. ` +
+              `We appreciate your contribution! A maintainer will review ` +
+              `it as soon as possible, but please note that response times ` +
+              `may vary.`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: welcomeMessage
+            });
+
+      - name: Process New PR
+        if: github.event_name == 'pull_request_target'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const creator = context.payload.pull_request.user.login;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const prNumber = context.issue.number;
+
+            const searchParams = {
+              q: `is:pr author:${creator} repo:${repoOwner}/${repoName}`
+            };
+            const { data: searchData } = await github.rest.search
+              .issuesAndPullRequests(searchParams);
+
+            if (searchData.total_count === 1) {
+              const prWelcomeMessage = `Hello @${creator} 🎉!\n\n` +
+                `Welcome to our repository! Thank you so much for your ` +
+                `first pull request. We are thrilled to have you as a ` +
+                `contributor.\n\nOur team will review your changes shortly. ` +
+                `During the review process, we might suggest some changes ` +
+                `or ask for clarification, so please keep an eye on ` +
+                `this PR.\n\nThanks again for your contribution!`;
+
+              await github.rest.issues.createComment({
+                owner: repoOwner,
+                repo: repoName,
+                issue_number: prNumber,
+                body: prWelcomeMessage
+              });
+            }
