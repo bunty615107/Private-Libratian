@@ -1,5 +1,7 @@
 # Private Librarian
 
+[![F-Droid](https://fdroid.gitlab.io/artwork/badge/get-it-on.png)](https://f-droid.org/packages/com.privatelibrarian.app/)
+
 A privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using **Gemma 4**.
 
 ## 🚀 Features

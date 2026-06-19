@@ -1,0 +1,8 @@
+Private Librarian is a privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using Gemma 4.
+
+Features:
+- 100% Offline: No documents or embeddings ever leave your device.
+- Semantic Search: Powered by ObjectBox Vector DB for fast, high-dimensional retrieval.
+- Local LLM: Uses Gemma 4 (4-bit quantized) via MediaPipe for intelligence.
+- Automated Indexing: Background scanning with WorkManager, optimized for battery and performance.
+- Search-First UI: Minimalist Material 3 interface built with Jetpack Compose.
