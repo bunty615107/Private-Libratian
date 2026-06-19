@@ -137,7 +137,9 @@ Contributions are what make the open-source community such an amazing place to l
 .\push_to_github.ps1 -RepoUrl "https://github.com/bunty615107/Private-Libratian.git"
 ```
 
----
+## 🌍 Community & Promotion
+- Check out our [Promotion Guide](PROMOTION.md) for templates on how to share Private Librarian on Reddit, XDA, dev.to, and more!
+- View our [Changelog](CHANGELOG.md) for the latest updates.
 
 ## 📄 License
 
