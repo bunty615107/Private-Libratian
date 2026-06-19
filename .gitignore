@@ -17,3 +17,5 @@ local.properties
 
 # Jenkins
 jenkins_home/
+
+app/build/

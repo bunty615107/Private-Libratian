@@ -1,5 +1,7 @@
 # Private Librarian
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using **Gemma 4**.
 
 ## 🚀 Features
@@ -29,4 +31,4 @@ Initialize Git and use the helper script to push to your remote:
 ```
 
 ## 📄 License
-Released under the Apache 2.0 License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
