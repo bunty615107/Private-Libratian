@@ -1,5 +1,7 @@
 # Private Librarian
 
+[![GitHub Release](https://img.shields.io/github/v/release/bunty615107/Private-Libratian)](https://github.com/bunty615107/Private-Libratian/releases)
+
 A privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using **Gemma 4**.
 
 ## 🚀 Features
