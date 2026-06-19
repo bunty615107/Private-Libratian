@@ -1,5 +1,8 @@
 # Private Librarian
 
+[![CI Build](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml/badge.svg)](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml)
+
+A privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using **Gemma 4**.
 [![Build Status](https://img.shields.io/github/actions/workflow/status/bunty615107/Private-Libratian/build.yml?style=flat-square)](https://github.com/bunty615107/Private-Libratian/actions)
 [![License](https://img.shields.io/github/license/bunty615107/Private-Libratian?style=flat-square)](https://github.com/bunty615107/Private-Libratian/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/bunty615107/Private-Libratian?style=flat-square)](https://github.com/bunty615107/Private-Libratian/stargazers)
