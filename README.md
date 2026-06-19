@@ -1,5 +1,9 @@
 # Private Librarian
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-purple.svg)](https://kotlinlang.org/)
+
 A privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using **Gemma 4**.
 
 ## 🚀 Features
@@ -27,6 +31,10 @@ Initialize Git and use the helper script to push to your remote:
 ```powershell
 .\push_to_github.ps1 -RepoUrl "https://github.com/bunty615107/Private-Libratian.git"
 ```
+
+## 🌍 Community & Promotion
+- Check out our [Promotion Guide](PROMOTION.md) for templates on how to share Private Librarian on Reddit, XDA, dev.to, and more!
+- View our [Changelog](CHANGELOG.md) for the latest updates.
 
 ## 📄 License
 Released under the Apache 2.0 License.
