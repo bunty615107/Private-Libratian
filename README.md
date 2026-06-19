@@ -1,5 +1,6 @@
 # Private Librarian
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Release](https://img.shields.io/github/v/release/bunty615107/Private-Libratian)](https://github.com/bunty615107/Private-Libratian/releases)
 [![F-Droid](https://fdroid.gitlab.io/artwork/badge/get-it-on.png)](https://f-droid.org/packages/com.privatelibrarian.app/)
 [![CI Build](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml/badge.svg)](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml)
@@ -147,13 +148,4 @@ Contributions are what make the open-source community such an amazing place to l
 - View our [Changelog](CHANGELOG.md) for the latest updates.
 
 ## 📄 License
-
-Distributed under the Apache 2.0 License. See `LICENSE` for more information.
-
----
-
-## 📫 Contact & Support
-
-**Project Link:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
-
-If you have any questions or run into issues, please open an issue on GitHub.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
