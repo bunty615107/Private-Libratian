@@ -1,5 +1,6 @@
 # Private Librarian
 
+[![GitHub Release](https://img.shields.io/github/v/release/bunty615107/Private-Libratian)](https://github.com/bunty615107/Private-Libratian/releases)
 [![F-Droid](https://fdroid.gitlab.io/artwork/badge/get-it-on.png)](https://f-droid.org/packages/com.privatelibrarian.app/)
 [![CI Build](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml/badge.svg)](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml)
 
