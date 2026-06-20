@@ -2,7 +2,7 @@ package com.privatelibrarian.app.data.llm
 
 class Gemma4PromptBuilder {
     fun buildPrompt(query: String, context: List<String>): String {
-        val contextText = context.joinToString("\n") { "- $it" }
+        val contextText = context.joinToString("\n            ") { "- $it" }
         
         return """
             <start_of_turn>user
