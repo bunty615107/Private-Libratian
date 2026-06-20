@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Release](https://img.shields.io/github/v/release/bunty615107/Private-Libratian)](https://github.com/bunty615107/Private-Libratian/releases)
 [![F-Droid](https://fdroid.gitlab.io/artwork/badge/get-it-on.png)](https://f-droid.org/packages/com.privatelibrarian.app/)
-[![CI Build](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml/badge.svg)](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml)
+[![CI Build Status](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml/badge.svg)](https://github.com/bunty615107/Private-Libratian/actions/workflows/build.yml)
 
 A privacy-first, on-device AI assistant for Android that indexes your local documents (PDFs, images, notes) and provides natural-language answers using **Gemma 4**.
 [![Build Status](https://img.shields.io/github/actions/workflow/status/bunty615107/Private-Libratian/build.yml?style=flat-square)](https://github.com/bunty615107/Private-Libratian/actions)
