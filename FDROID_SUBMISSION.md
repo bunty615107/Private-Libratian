@@ -1,37 +1,41 @@
 # F-Droid Submission Guide
 
-This guide explains how to submit the Private Librarian app to F-Droid.
+This guide explains how to submit **Private Librarian** to F-Droid.
 
-## Prerequisites
+## 1. Fork the `fdroiddata` Repository
+1. Go to the [fdroiddata repository](https://gitlab.com/fdroid/fdroiddata) on GitLab.
+2. Fork the repository to your own account.
+3. Clone your fork locally:
+   ```bash
+   git clone https://gitlab.com/<your-username>/fdroiddata.git
+   cd fdroiddata
+   ```
 
-- F-Droid builds apps from source. Make sure the app's source code is public and open-source (this repository is).
-- F-Droid only accepts open-source dependencies. Ensure your `build.gradle` has no proprietary binary blobs unless explicitly allowed by F-Droid policies.
-- The `fastlane/metadata/android/` folder in this repository contains the app description, title, and changelogs. F-Droid will use this automatically.
-
-## Submission Steps
-
-### 1. Fork the `fdroiddata` Repository
-
-Go to [GitLab](https://gitlab.com/fdroid/fdroiddata) and fork the `fdroiddata` repository to your account. This is the main repository holding metadata for all F-Droid apps.
-
-### 2. Create the App Metadata File
-
-In your fork, create a new YAML file under `metadata/com.privatelibrarian.app.yml`.
-
-Example content for `com.privatelibrarian.app.yml`:
+## 2. Create the Metadata YAML File
+F-Droid uses a YAML file to build and package your app. Create a file named `metadata/com.privatelibrarian.app.yml` in the `fdroiddata` repository with the following content:
 
 ```yaml
 Categories:
   - System
-  - Reading
-License: Apache-2.0
+License: MIT
+AuthorName: bunty615107
+AuthorEmail: bunty615107@example.com
 SourceCode: https://github.com/bunty615107/Private-Libratian
 IssueTracker: https://github.com/bunty615107/Private-Libratian/issues
 
-AutoUpdateMode: Version
-UpdateCheckMode: Tags
-CurrentVersion: '1.0'
-CurrentVersionCode: 1
+Summary: A privacy-first, on-device AI assistant.
+Description: |-
+    Private Librarian is a privacy-first, on-device AI assistant for Android that
+    indexes your local documents (PDFs, images, notes) and provides natural-language
+    answers using Gemma 4.
+
+    Features:
+    * 100% Offline: No documents or embeddings ever leave your device.
+    * Semantic Search: Powered by ObjectBox Vector DB for fast retrieval.
+    * Local LLM: Uses Gemma 4 (4-bit quantized) via MediaPipe.
+
+RepoType: git
+Repo: https://github.com/bunty615107/Private-Libratian.git
 
 Builds:
   - versionName: '1.0'
@@ -40,36 +44,31 @@ Builds:
     subdir: app
     gradle:
       - yes
+
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags
+CurrentVersion: '1.0'
+CurrentVersionCode: 1
 ```
+*(Make sure lines do not exceed 80 characters to pass yamllint checks!)*
 
-*Note: Update the `commit` tag to point to the correct release tag in your repository.*
+## 3. Verify Fastlane Metadata
+We use the Fastlane metadata structure which F-Droid supports out of the box. Ensure the `fastlane/metadata/android/` structure in the Private-Libratian repository is up to date:
+- `en-US/title.txt`
+- `en-US/short_description.txt`
+- `en-US/full_description.txt`
+- `en-US/changelogs/<versionCode>.txt`
 
-### 3. Test the Build Locally (Optional but Recommended)
-
-You can clone F-Droid server tools and run them locally to verify the build:
+## 4. Run F-Droid Linter and Build
+It is highly recommended to run the F-Droid build tools locally before submitting a PR.
 ```bash
-fdroid readmeta
-fdroid build com.privatelibrarian.app
+# Inside fdroiddata directory
+fdroid lint com.privatelibrarian.app
+fdroid build -v -l com.privatelibrarian.app
 ```
 
-### 4. Create a Merge Request
-
-1. Commit the `metadata/com.privatelibrarian.app.yml` file to a new branch in your `fdroiddata` fork.
-2. Push the branch to GitLab.
-3. Open a **Merge Request (MR)** against the upstream `fdroid/fdroiddata` repository.
-4. Fill in the MR template provided by F-Droid.
-5. Wait for the F-Droid maintainers or automated bots to review the build process. Fix any issues that arise during the build pipeline.
-
-### 5. App Publishing
-
-Once merged, your app will be built and published in the next F-Droid cycle (usually within 1-3 days).
-
-The app will be available at:
-`https://f-droid.org/packages/com.privatelibrarian.app/`
-
-## Continuous Updates
-
-When you release a new version of Private Librarian:
-1. Tag the release in your GitHub repository.
-2. The F-Droid update checker will automatically detect the new tag (due to `UpdateCheckMode: Tags`).
-3. F-Droid will automatically build and publish the new version. You don't need to manually update the metadata file unless dependencies change.
+## 5. Submit the Merge Request
+1. Commit the new metadata file to your `fdroiddata` fork.
+2. Push your branch to GitLab.
+3. Create a Merge Request (MR) against the main F-Droid repository.
+4. Fill out the MR template, noting any special build instructions (e.g., downloading the Gemma 4 weights during build if they aren't bundled, or relying on user-provided weights).

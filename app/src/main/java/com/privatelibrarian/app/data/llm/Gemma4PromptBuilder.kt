@@ -4,16 +4,18 @@ class Gemma4PromptBuilder {
     fun buildPrompt(query: String, context: List<String>): String {
         val contextText = context.joinToString("\n            ") { "- $it" }
         
-        return """
+        val template = """
             <start_of_turn>user
             You are a helpful Private Librarian. Answer the question based ONLY on the provided context.
             
             Context:
-            $contextText
+            {CONTEXT}
             
-            Question: $query
+            Question: {QUERY}
             <end_of_turn>
             <start_of_turn>model
         """.trimIndent()
+
+        return template.replace("{CONTEXT}", contextText).replace("{QUERY}", query)
     }
 }
