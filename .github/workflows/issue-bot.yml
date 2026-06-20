@@ -1,9 +1,9 @@
----
-name: Issue and PR Welcome Bot
-"on":
+name: Issue and PR Bot
+
+on:
   issues:
     types: [opened]
-  pull_request_target:
+  pull_request:
     types: [opened]
 
 permissions:
@@ -11,86 +11,65 @@ permissions:
   pull-requests: write
 
 jobs:
-  welcome-and-label:
+  issue-and-pr-bot:
     runs-on: ubuntu-latest
     steps:
-      - name: Process New Issue
+      - name: Handle Issue
         if: github.event_name == 'issues'
         uses: actions/github-script@v7
         with:
           script: |
-            const issueBody = context.payload.issue.body || '';
-            const repoOwner = context.repo.owner;
-            const issueNumber = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = context.issue.number;
+            const body = context.payload.issue.body || '';
 
-            let labelToAdd = '';
-            if (issueBody.includes('<!-- template: bug -->')) {
-              labelToAdd = 'bug';
-            } else if (issueBody.includes('<!-- template: enhancement -->')) {
-              labelToAdd = 'enhancement';
-            } else if (issueBody.includes('<!-- template: question -->')) {
-              labelToAdd = 'question';
+            const msg = 'Thanks for opening an issue! ' +
+              'We will review it and get back to you ' +
+              'as soon as possible.';
+
+            await github.rest.issues.createComment({
+              owner, repo, issue_number, body: msg
+            });
+
+            await github.rest.issues.addAssignees({
+              owner, repo, issue_number, assignees: [owner]
+            });
+
+            const labels = [];
+            if (body.includes('<!-- template: bug -->')) {
+              labels.push('bug');
+            }
+            if (body.includes('<!-- template: enhancement -->')) {
+              labels.push('enhancement');
+            }
+            if (body.includes('<!-- template: question -->')) {
+              labels.push('question');
             }
 
-            if (labelToAdd) {
+            if (labels.length > 0) {
               await github.rest.issues.addLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issueNumber,
-                labels: [labelToAdd]
+                owner, repo, issue_number, labels
               });
             }
 
-            await github.rest.issues.addAssignees({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber,
-              assignees: [repoOwner]
-            });
-
-            const userLogin = context.payload.issue.user.login;
-            const welcomeMessage = `Hello @${userLogin} ` +
-              `👋!\n\nThank you for opening this issue and reporting it. ` +
-              `We appreciate your contribution! A maintainer will review ` +
-              `it as soon as possible, but please note that response times ` +
-              `may vary.`;
-
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber,
-              body: welcomeMessage
-            });
-
-      - name: Process New PR
-        if: github.event_name == 'pull_request_target'
+      - name: Handle PR
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            const creator = context.payload.pull_request.user.login;
-            const repoOwner = context.repo.owner;
-            const repoName = context.repo.repo;
-            const prNumber = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issue_number = context.issue.number;
+            const pr = context.payload.pull_request;
+            const assoc = pr.author_association;
 
-            const searchParams = {
-              q: `is:pr author:${creator} repo:${repoOwner}/${repoName}`
-            };
-            const { data: searchData } = await github.rest.search
-              .issuesAndPullRequests(searchParams);
-
-            if (searchData.total_count === 1) {
-              const prWelcomeMessage = `Hello @${creator} 🎉!\n\n` +
-                `Welcome to our repository! Thank you so much for your ` +
-                `first pull request. We are thrilled to have you as a ` +
-                `contributor.\n\nOur team will review your changes shortly. ` +
-                `During the review process, we might suggest some changes ` +
-                `or ask for clarification, so please keep an eye on ` +
-                `this PR.\n\nThanks again for your contribution!`;
-
+            if (assoc === 'FIRST_TIMER' ||
+                assoc === 'FIRST_TIME_CONTRIBUTOR') {
+              const msg = 'Welcome and thanks for your first PR! ' +
+                'A reviewer will review your code soon. ' +
+                'We appreciate your contribution!';
               await github.rest.issues.createComment({
-                owner: repoOwner,
-                repo: repoName,
-                issue_number: prNumber,
-                body: prWelcomeMessage
+                owner, repo, issue_number, body: msg
               });
             }
