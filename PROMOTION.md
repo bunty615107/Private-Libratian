@@ -1,145 +1,92 @@
-# Private Librarian Promotion Guide
+# Private Librarian - Community Submission and Promotion Guide
 
-This document contains templates and instructions to help promote the Private Librarian repository to the open-source and Android communities.
+This document provides templates and outlines for promoting the **Private-Libratian** repository across various open-source and developer communities.
 
 ## 1. Reddit Submission Templates
 
-### For r/androidapps
-
-**Title:** [DEV] Private Librarian: A 100% Offline, Privacy-First AI Assistant for Your Local Documents
-
+### r/androidapps
+**Title:** [DEV] Private-Libratian: A 100% Offline, Privacy-First AI Assistant for Local Documents
 **Body:**
+Hello r/androidapps!
+I am excited to share **Private-Libratian**, an open-source Android application that indexes your local documents (PDFs, images, notes) and allows you to query them using natural language—completely offline.
 
-Hi r/androidapps!
+*Why use it?*
+- **Absolute Privacy:** Your data never leaves your device. No cloud APIs are used.
+- **Local AI:** Powered by a 4-bit quantized Gemma 4 model running via MediaPipe.
+- **Semantic Search:** Uses ObjectBox Vector DB for lightning-fast, high-dimensional vector retrieval.
+- **Background Indexing:** Automatically scans and indexes local files efficiently using WorkManager.
 
-I wanted to share a project I've been working on called **Private Librarian**. It's a privacy-first AI assistant for Android that indexes your local documents (PDFs, images, notes) and lets you query them using natural language.
-
-**Why I built it:** I was tired of uploading my private documents to cloud services just to get some AI magic. I wanted an on-device solution that guarantees privacy.
-
-**Key Features:**
-
-*   **100% Offline & Private:** No documents or embeddings ever leave your device.
-*   **Powered by Gemma 4:** Uses a 4-bit quantized Gemma 4 model via MediaPipe for powerful local inference.
-*   **Semantic Search:** Fast retrieval powered by ObjectBox Vector DB.
-*   **Battery Friendly:** Background scanning happens efficiently using WorkManager.
-*   **Clean UI:** Minimalist Material 3 design built with Jetpack Compose.
-
-It's completely open-source. If you value privacy and on-device AI, give it a try! I’d love to hear your feedback or feature requests.
-
-**GitHub Repository:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
+Check it out and let me know your thoughts or feature requests!
+**GitHub:** [Private-Libratian](https://github.com/bunty615107/Private-Libratian)
 
 ---
 
-### For r/opensource
-
-**Title:** [Show r/opensource] Private Librarian - An on-device, privacy-first Android AI assistant (Gemma 4)
-
+### r/opensource
+**Title:** [Show r/opensource] Private-Libratian – An On-Device, Privacy-First Android AI Assistant powered by Gemma 4
 **Body:**
-
-Hey everyone,
-
-I recently open-sourced **Private Librarian**, an Android app that acts as an intelligent assistant for your local files (PDFs, text, notes) without needing any cloud processing.
-
-It uses **Gemma 4** (running locally via MediaPipe) and **ObjectBox Vector DB** for semantic search. Everything happens on your device, ensuring 100% privacy.
-
-Tech Stack highlights: Kotlin, Jetpack Compose, Coroutines, Room, ObjectBox Vector DB, MediaPipe LLM.
-
-If you are interested in on-device AI, mobile development, or privacy-focused tools, I'd appreciate it if you checked out the repo. Contributions and feedback are very welcome!
-
-**Link:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
+Hi everyone,
+I’ve recently open-sourced **Private-Libratian**. It’s an Android assistant that searches through your local files (PDFs, images, text) using local AI.
+It uses **Gemma 4** (via MediaPipe) and **ObjectBox Vector DB** for semantic search. Everything runs locally on your device, ensuring complete data privacy.
+If you're interested in on-device AI or Jetpack Compose, I'd love your feedback!
+**Repo:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
 
 ---
 
-### For r/selfhosted
-
-*(Note: While not exactly a server self-hosting app, it fits the "control your own data" ethos of the community. Frame it accordingly).*
-
-**Title:** Private Librarian: An open-source Android app for "self-hosting" AI document search directly on your phone
-
+### r/selfhosted
+**Title:** Private-Libratian: An open-source Android app to "self-host" AI document search directly on your phone
 **Body:**
-
-Hi r/selfhosted,
-
-While this isn't a docker container you spin up on your NAS, I thought this community might appreciate the ethos behind **Private Librarian**. It's an Android app that indexes and searches your local documents using AI, completely offline.
-
-Instead of sending your PDFs and notes to a third-party API, the app runs a **Gemma 4** model locally on your phone (using MediaPipe) and stores vector embeddings locally using **ObjectBox Vector DB**.
-
-It guarantees that your data stays on your device.
-
-If you are trying to de-cloud your life and keep your data local, check it out. It's completely open-source under the Apache 2.0 license.
-
-**GitHub Repository:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
+Hey r/selfhosted,
+While this isn’t a typical server-side self-hosted tool, it perfectly aligns with the community's privacy-first ethos. **Private-Libratian** is an Android app that indexes and searches your local documents using AI, completely offline.
+Instead of sending your data to the cloud, it runs **Gemma 4** locally via MediaPipe and stores vector embeddings using ObjectBox Vector DB. Your data stays securely on your device.
+**GitHub:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
 
 ## 2. Dev.to Article Outline Template
 
 **Title:** Building a 100% Offline AI Assistant for Android with Gemma 4 and Jetpack Compose
 
 **Outline:**
-
-1.  **Introduction**
-    *   The problem: We love AI document search (like ChatPDF), but hate giving up our private data to the cloud.
-    *   The solution: Introduce Private Librarian – a privacy-first, fully local Android app.
-2.  **Architecture & Tech Stack overview**
-    *   Why Kotlin & Jetpack Compose?
-    *   The challenges of on-device AI on Android.
-3.  **Deep Dive: The AI Brain (Gemma 4 & MediaPipe)**
-    *   How to integrate MediaPipe LLM Inference.
-    *   Using the 4-bit quantized Gemma 4 model to balance performance and memory.
-4.  **Deep Dive: Semantic Search (ObjectBox)**
-    *   Explain vector embeddings briefly.
-    *   Why ObjectBox Vector DB was chosen for fast, local, high-dimensional retrieval.
-5.  **Handling Background Tasks Smoothly**
-    *   Using WorkManager to index documents without draining the battery.
-6.  **Challenges Faced & Lessons Learned**
-    *   Managing model weight downloads.
-    *   Optimizing memory for local LLMs on mobile.
-7.  **Conclusion & Call to Action**
-    *   Link to the GitHub repository.
-    *   Invite contributors and feedback.
+1. **Introduction:** The need for private, offline AI document search on mobile devices.
+2. **Project Architecture:** Overview of the tech stack (Kotlin, Jetpack Compose, Coroutines).
+3. **Local LLM Integration:** Running Gemma 4 locally using the MediaPipe LLM Inference Engine.
+4. **Semantic Search Implementation:** Utilizing ObjectBox Vector DB for fast, on-device vector retrieval.
+5. **Efficient Background Indexing:** Using WorkManager to handle document scanning without draining the battery.
+6. **Challenges and Learnings:** Overcoming memory constraints and optimizing mobile AI performance.
+7. **Conclusion & Call to Action:** Encouraging contributions and sharing the GitHub repository link.
 
 ## 3. Submitting to Awesome Lists on GitHub
 
-Awesome lists are a great way to get long-term visibility.
+To gain long-term visibility, submit Private-Libratian to relevant "Awesome Lists":
 
-### How to Submit:
-
-1.  **Find Relevant Lists:**
-    *   [awesome-android](https://github.com/JStumpp/awesome-android)
-    *   [awesome-android-ui](https://github.com/wasabeef/awesome-android-ui) (if you want to highlight the Compose UI)
-    *   [awesome-local-ai](https://github.com/janhq/awesome-local-ai)
-2.  **Read the Guidelines:** Every list has a `CONTRIBUTING.md`. Read it carefully to ensure your app fits their criteria (some require a certain number of stars or specific formatting).
-3.  **Fork the Repository:** Fork the awesome list repo to your own account.
-4.  **Add Private Librarian:** Edit the `README.md` of the awesome list. Find the appropriate category (e.g., "Productivity", "AI", "Search"). Add the entry alphabetically or chronologically depending on the rules.
-    *   *Example Entry:* `[Private Librarian](https://github.com/bunty615107/Private-Libratian) - A privacy-first, on-device AI assistant that indexes local documents using Gemma 4.`
-5.  **Create a Pull Request:** Submit a PR with a clear title (e.g., "Add Private Librarian to Productivity Apps"). Explain what the app does in the description.
+1. **Find Target Lists:**
+   - [awesome-android](https://github.com/JStumpp/awesome-android)
+   - [awesome-local-ai](https://github.com/janhq/awesome-local-ai)
+2. **Review Guidelines:** Carefully read the `CONTRIBUTING.md` of each target repository.
+3. **Fork and Edit:** Fork the list, and add an alphabetical/chronological entry under a relevant category (e.g., "AI", "Productivity").
+   - *Example Entry:* `[Private-Libratian](https://github.com/bunty615107/Private-Libratian) - A privacy-first, on-device AI assistant that indexes local documents using Gemma 4.`
+4. **Submit a Pull Request:** Create a PR detailing what the app does.
 
 ## 4. XDA Developers Forum Post Template
 
 **Forum Section:** Android Apps and Games -> Android Apps
 
-**Title:** [APP][8.0+] Private Librarian - 100% Offline AI Document Assistant (Gemma 4)
+**Title:** [APP][8.0+] Private-Libratian - 100% Offline AI Document Assistant (Gemma 4)
 
 **Post:**
-
-Hello XDA!
-
-I'd like to present an open-source app I've developed called **Private Librarian**. It brings the power of AI document analysis directly to your phone, completely offline.
+Hello XDA community!
+I'm excited to present an open-source app called **Private-Libratian**. It brings powerful AI document analysis directly to your phone, completely offline.
 
 **Features:**
-*   **Local AI:** Uses Gemma 4 (4-bit quantized) running on-device via MediaPipe.
-*   **Semantic Search:** Quickly find answers inside your PDFs, images, and notes using ObjectBox Vector DB.
-*   **Privacy First:** No cloud API calls. Your documents never leave your device.
-*   **Background Indexing:** Automatically scans your folders efficiently using WorkManager.
-*   **Material 3 UI:** Clean, modern interface built with Jetpack Compose.
-
-**How it works:**
-The app indexes your local files, creates vector embeddings, and stores them locally. When you ask a question, it finds the relevant context from your files and uses the local Gemma model to generate an answer.
+- **Local AI:** Uses a 4-bit quantized Gemma 4 model running via MediaPipe.
+- **Semantic Search:** Quickly find answers inside your PDFs, images, and notes using ObjectBox Vector DB.
+- **Privacy First:** Your documents never leave your device.
+- **Background Indexing:** Automatically and efficiently scans your folders using WorkManager.
+- **Modern UI:** Built from the ground up with Jetpack Compose and Material 3.
 
 **Requirements:**
-*   Android 8.0+
-*   Adequate RAM/Storage for the Gemma 4 model weights.
+- Android 8.0+
+- Adequate RAM/Storage to support the Gemma 4 model weights.
 
 **Downloads & Source Code:**
-*   **GitHub (Source & Releases):** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
+- **GitHub:** [https://github.com/bunty615107/Private-Libratian](https://github.com/bunty615107/Private-Libratian)
 
-Feedback, bug reports, and contributions are very welcome! Please open an issue on GitHub or reply to this thread.
+I'd appreciate your feedback, bug reports, and any contributions!
