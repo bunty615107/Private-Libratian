@@ -1,9 +1,10 @@
+---
 name: Scheduled Release
 
-on:
+"on":
   schedule:
-    - cron: '0 0 */14 * *' # Every 2 weeks
-  workflow_dispatch: # Allow manual triggering
+    - cron: '0 0 */14 * *'  # Every 2 weeks
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   release:
@@ -21,14 +22,16 @@ jobs:
         id: versioning
         run: |
           # Get the latest tag
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          LATEST_TAG=$(git describe \
+            --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
           echo "Latest tag: $LATEST_TAG"
 
           # Check for new commits since the latest tag
           if [ "$LATEST_TAG" = "v0.0.0" ]; then
             COMMITS_SINCE=$(git rev-list HEAD --count)
           else
-            COMMITS_SINCE=$(git rev-list $LATEST_TAG..HEAD --count 2>/dev/null || echo "0")
+            COMMITS_SINCE=$(git rev-list \
+              $LATEST_TAG..HEAD --count 2>/dev/null || echo "0")
           fi
 
           echo "Commits since last tag: $COMMITS_SINCE"
