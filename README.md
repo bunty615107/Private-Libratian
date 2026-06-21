@@ -3,7 +3,9 @@
 # 📚 Private-Libratian
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/bunty615107/Private-Libratian/build.yml?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/actions)
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/bunty615107/Private-Libratian/blob/main/LICENSE)
+[![Release Status](https://img.shields.io/github/actions/workflow/status/bunty615107/Private-Libratian/release.yml?style=for-the-badge&label=Release)](https://github.com/bunty615107/Private-Libratian/actions/workflows/release.yml)
+[![Version](https://img.shields.io/github/v/release/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/releases)
+[![License](https://img.shields.io/github/license/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/stargazers)
 [![Forks](https://img.shields.io/github/forks/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/network/members)
 [![GitHub Release](https://img.shields.io/github/v/release/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/releases)
