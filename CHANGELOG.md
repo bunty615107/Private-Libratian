@@ -19,3 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - N/A - Initial release
+
+## [1.0.1] - Documentation Update
+
+### Added
+- Created a comprehensive community promotion guide (`PROMOTION.md`).
+- Added social media and community badges to the top of `README.md`.
+- Added a `Community & Promotion` section to `README.md`.
