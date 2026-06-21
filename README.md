@@ -10,6 +10,10 @@
 [![GitHub Release](https://img.shields.io/github/v/release/bunty615107/Private-Libratian?style=flat-square)](https://github.com/bunty615107/Private-Libratian/releases)
 [![F-Droid](https://img.shields.io/badge/F--Droid-Get_it_on-blue?logo=f-droid&style=flat-square)](https://f-droid.org/packages/com.privatelibrarian.app/)
 
+[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://www.reddit.com/r/androidapps/)
+[![XDA](https://img.shields.io/badge/XDA-%23EA7100.svg?style=for-the-badge&logo=XDA-Developers&logoColor=white)](https://forum.xda-developers.com/)
+[![DEV.TO](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white)](https://dev.to/)
+
 **A privacy-first, on-device AI assistant for Android that indexes your local documents and provides natural-language answers using Gemma 4.**
 
 </div>
@@ -155,7 +159,13 @@ For more details, please see our [Contributing Guidelines](CONTRIBUTING.md) and 
 
 ## 🌍 Community & Promotion
 
-- Check out our [Promotion Guide](PROMOTION.md) for templates on how to share Private-Libratian on Reddit, XDA, dev.to, and more!
+Join our growing community and help us spread the word!
+
+- **Reddit:** Discuss the app on [r/androidapps](https://www.reddit.com/r/androidapps/), [r/opensource](https://www.reddit.com/r/opensource/), and [r/selfhosted](https://www.reddit.com/r/selfhosted/).
+- **XDA Developers:** Join the conversation on our [XDA Forum thread](https://forum.xda-developers.com/).
+- **Dev.to:** Read our [launch article and technical deep dive](https://dev.to/).
+
+For those looking to help promote the project, check out our [Promotion Guide](PROMOTION.md) for ready-to-use templates on how to share Private-Libratian across these platforms and more!
 - View our [Changelog](CHANGELOG.md) for the latest updates and release history.
 
 ---
