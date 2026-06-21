@@ -3,7 +3,7 @@
 # 📚 Private-Libratian
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/bunty615107/Private-Libratian/build.yml?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/actions)
-[![License](https://img.shields.io/github/license/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/blob/main/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/bunty615107/Private-Libratian/blob/main/LICENSE)
 [![Stars](https://img.shields.io/github/stars/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/stargazers)
 [![Forks](https://img.shields.io/github/forks/bunty615107/Private-Libratian?style=for-the-badge)](https://github.com/bunty615107/Private-Libratian/network/members)
 
@@ -160,7 +160,7 @@ For more details, please see our [Contributing Guidelines](CONTRIBUTING.md) and 
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
